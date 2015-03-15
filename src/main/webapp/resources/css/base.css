@@ -1,0 +1,140 @@
+/* CSS Document */
+body,p,b,dl,dd,table,td,input,img,form,div,ul,li,h1,h2,h3{margin:0;padding:0; font-family:"微软雅黑",Arial, Helvetica, sans-serif; font-size:12px;color:#333;}
+h1,h2,h3{font-weight:normal;font-size:100%;}
+a{text-decoration:none;color:#666;}
+a:hover{text-decoration:underline;}
+a img,:link img,:visited img{border:none;}
+ol,ul{list-style:none;}
+img,iframe{border:none;text-decoration:none;}
+table{border-collapse:separate;border-spacing:0;}
+input,textarea,select,button{font-size:100%;font-family:inherit;}
+.float-left{float:left;}
+.float-right{float:right;}
+.clear{clear:both; height:0; overflow:hidden;}
+th{ font-weight:bold; text-align:center;}
+
+
+/*login*/
+.center{width: 960px; margin:10px auto;}
+
+.div960 .logo{width:88px;height:81px;margin-top:10px; display:inline; float:left;}
+.div960 .fb{ width:334px; height:35px; float:left; margin:35px 0 0 20px;}
+.div960 .line{ height:2px; width:100%; background:#07A3C7;}
+
+.left { width:592px; height:367px;background:url(../img/lgn.gif) no-repeat center #FFF;float:left; margin:50px 0;}
+
+.right { width:320px;margin:50px 20px;background:#FFF; overflow:hidden; float:left;}
+
+.loginbg{ width:320px; height:368px; background:url(../img/lo_bg4.gif) no-repeat; overflow:hidden;}
+.login_zliao{ height:210px; margin-left:20px; text-align:left; width:290px;}
+.loginbg p{ width:320px; margin-top:30px; height:30px;line-height:30px; color:#c00; text-align:center;}
+
+.user {
+    color: #000000;
+    float: left;
+    font-family: "宋体";
+    font-size: 13px;
+    font-variant: inherit;
+    height: 26px;
+    margin-left: 10px;
+    margin-top: 8px;
+    width: 270px;
+}
+.password {
+    color: #000000;
+    float: left;
+    font-family: "宋体";
+    font-size: 13px;
+    margin-left: 10px;
+    margin-top: 8px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 280px;
+}
+.yzm{color: #000000;
+    float: left;
+    font-family: "宋体";
+    font-size: 13px;
+    font-variant: inherit;
+    height: 86px;
+    margin-left: 10px;
+    margin-top: 8px;
+    width: 270px;}
+
+.input1{ float:left; width:180px;}
+.input2{ float:left; width:90px;}
+.yzm img{ width:200px; height:50px; margin-top:8px; margin-left:30px;}
+
+.font1{ width:60px; float:left; line-height:24px;}
+.logo_wk_tijiao {
+    display: inline;
+    float: left;
+    height: 25px;
+    margin-top:3px;
+    padding-left:72px;
+	_padding-left:82px;
+    text-align: left;
+    width: 90px;
+}
+/*logon end*/
+
+
+/* index */
+.inx_con{ width:90%; float:left; margin:20px 30px;}
+.inx_con li{ float:left;line-height:40px;width:48%; font-size:12px; margin:0 5px; color:#333;}
+.nrgt .inx_con p{text-align:left; width:100%; font-size:13px; margin-left:5px; color:#005495; font-weight:bold;border-bottom:#005495 dashed 1px;}
+
+
+/*con*/
+.head{ width:100%; background:url(../img/bg1.gif) repeat-x; height:90px;}
+.div960{ width:960px; margin:0 auto;}
+
+.wm{ background:url(../img/wm.gif); width:494px; height:90px;}
+.nav{ background:url(../img/bg2.gif); width:100%; height:30px;}
+.div960 li{float:left;font-size:14px; font-weight:bold; line-height:28px; margin:2px 14px 0 14px;}
+.div960 .cur{background:url(../img/nbg.gif) repeat-x; height:28px; padding:0 8px;}
+.div960 .cur a{ color:#005495;}
+
+.div960 li a{color:#fff; padding:0 8px; text-decoration:none;}
+.div960 .wel{ float:right; font-weight:normal;}
+.div960 .wel p{color:#fff;}
+.div960 .wel p span{ font-weight:bold;}
+.div960 .wel p a{ margin-left:25px; text-decoration:underline;}
+
+
+.nlft{ width:96%; margin:20px 15px 0 0; float:left;}
+.wcc h1{ background:url(../img/sst.gif); width:210px; height:33px; color:#fff; }
+.wcc h1 strong{ line-height:34px; padding-left:40px; font-size:13px;}
+.wcc li{ float:none; font-size:12px; font-weight:normal; border-bottom:1px dashed #666; line-height:26px; width:194px; margin:12px 6px;text-align:center; }
+.wcc li a{color:#333;}
+.wcc li .scur{ color:#005495;}/*5c992d*/
+.wcc{ border:#c1c1c1 solid 1px; width:210px; margin-left:5px; border-top:none; margin-top:-2px;}
+
+.nrgt{ width:92%; float:left; margin:20px 15px 0 15px; border:1px solid #c1c1c1;}
+.nrgt p{ line-height:20px; width:90%; text-align:center; margin:0 auto; color:#c00;}
+.nrgt .chsm{ height:31px; background:url(../img/rbg.gif) repeat-x; width:100%;}
+.nrgt .chsm span{ line-height:31px;color:#005495; font-size:13px; font-weight:bold; padding-left:10px;}/*5c992d*/
+.nrgt .czsrt{ height:33px; margin:20px 10px 10px 10px; line-height:27px; color:#444; border-bottom:#c1c1c1 dashed 1px;}
+.nrgt .czsrt input{ height:22px; width:150px;}
+.nrgt .czsrt .tjbtn{ width:60px; height:25px;  margin:1px 5px;font-size:12px; line-height:23px;}
+.nrgt .czsrt .dist{ margin-left:10px;}
+.nrgt .czsrt .ifile {position:absolute;opacity:0;filter:alpha(opacity=0);}
+
+.rcd_td .table{ border:#eee solid 1px; width:100%; line-height:35px; margin:10px 0 30px 0;}
+.rcd_td .table th{ background-color:#feecd8; border-left:#eee solid 1px;}
+.rcd_td .table td a{ color:#26709a; }
+.rcd_td .table td span{background:url(../img/bj.gif); width:14px; height:14px;}
+.rcd_td .table td{ text-align:center; border-top:#eee solid 1px; border-left:#eee solid 1px;}
+
+.ldst{ margin-left:90px;}
+/*page*/
+.page{padding:10px 8px 25px 8px;text-align:center;}
+.page a{padding:2px 5px; margin:0 3px; border:1px solid #c6d3c8; color:#344889;}
+.page a:hover,.page .cur_a{background:#d8420c;color:#fff;border:1px solid #d8420c; }
+
+
+/*foot*/
+.foot{width:100%;text-align:center;line-height:30px;font-size:12px;color:#999;margin-top:15px; margin-bottom:15px; border-top:1px solid #c1c1c1;}
+.foot a{width:50px;margin-right:20px;color:#344889;}
+
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jason.sms.domain.security.UserRunAs">
+
+<resultMap type="UserRunAs" id="userRunAsResult">
+	<id property="fromUserId" column="from_user_id"/>
+	<id property="toUserId" column="to_user_id"/>
+</resultMap>
+
+<insert id="save" keyProperty="id" useGeneratedKeys="true" >
+	insert into security_user_runas(from_user_id, to_user_id) values (#{fromUserId},#{toUserId})
+</insert>
+
+<delete id="delete">
+	delete from security_user_runas where from_user_id=#{fromUserId} and to_user_id=#{toUserId}
+</delete>
+
+<select id="exists" resultType="Long" parameterType="java.util.Map">
+	select count(1) from security_user_runas
+    where 1 = 1
+    <if test="fromUserId != null and fromUserId !='' ">
+       and from_user_id = #{fromUserId}
+    </if>
+    <if test="toUserId != null and toUserId !='' ">
+       and to_user_id = #{toUserId}
+    </if>
+  </select>
+  <select resultType="Long" id="findFromUserIds" >
+    select from_user_id from security_user_runas where to_user_id = #{toUserId}
+  </select>
+
+<select resultType="Long" id="findToUserIds">
+    select to_user_id from security_user_runas where from_user_id = #{fromUserId}
+  </select>
+  
+</mapper>

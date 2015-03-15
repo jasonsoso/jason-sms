@@ -1,0 +1,148 @@
+body{
+	background:#FFF url(../images/bg.png) repeat-x ;
+}
+.logo{
+	width: 350px;
+	height:70px;
+	background: url(../images/logo.png) no-repeat;
+	text-indent: -9999em;
+	margin-left: 25px;
+}
+.login{
+	width: 690px;
+	min-height: 300px;
+	background: #FFF;
+	box-shadow: 0px 0px 8px #D5D5D5;
+	padding: 20px;
+	_zoom:1;
+	border-radius: 2px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin-left: -365px;
+	margin-top: -200px;
+}
+.login-inner{
+	position:relative;
+}
+.login-user{
+	position: absolute;
+	right: -10px;
+	top:-50px;
+}
+.login-user ul li{
+	float: left;
+	margin-left: 10px;
+	background: #cfe2da;
+	height: 30px;
+	padding:0px 10px;
+	line-height: 30px;
+	border-radius: 3px 3px 0px 0px;
+}
+.login-user ul li a{
+	color: #676767;
+}
+.login-user ul li.usercheck{
+	background: #FFF;
+	box-shadow: 0px -1px 2px #D5D5D5;
+}
+.login-user ul li.usercheck a{
+	color:#000;
+}
+.login-l{
+	width: 300px;
+	border-right: 1px solid #dedede;
+	padding-right: 60px;
+}
+.login-r{
+	width: 280px;
+	height: 210px;
+	background: url(../images/jigou.png) no-repeat center center;
+}
+.login-title .logo{
+	width: 100%;
+	background: url(../images/logo-main.png) no-repeat center center;
+	margin-left: 0px;
+}
+.loginbox{
+	padding: 20px;
+	overflow: hidden;
+	_zoom:1;
+}
+.loginbox .form-title{
+	display: inline-block;
+	width: 80px;
+	text-align: left;
+	font-weight: bold;
+	color: #4F4F4F;
+}
+.login-btn{
+	width: 100%;
+	padding: 0px;
+	height: 38px;
+	line-height: 38px;
+	font-size: 16px;
+	background: #e17f90;
+}
+.login-btn:hover{
+	background: #CA485E;
+}
+#jg-login .login-r{
+	background: url(../images/jigou.png) no-repeat center center;
+}
+#school-login .login-r{
+	background: url(../images/login.png) no-repeat center center;
+}
+ #student-login .login-r{
+	background: #FFF url(../images/family.png) no-repeat center center;
+}
+/* #student-login .login-r{
+	background: none;
+} */
+#jg-login .login-btn{
+	background: #e17f90;
+}
+#jg-login .login-btn:hover{
+	background: #CA485E;
+}
+#school-login .login-btn{
+	background: #4BC4CC;
+	border:1px solid #4BC4CC;
+}
+#school-login .login-btn:hover{
+	background: #33AAB3;
+}
+#student-login .login-btn{
+	background: #a8c77b;
+	border:1px solid #a8c77b;
+}
+#student-login .login-btn:hover{
+	background: #84AB4B;
+}
+.choice-school{
+	font-size: 18px;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+#captcha {
+	width: 180px;
+	margin-left: 80px;
+	margin-top: 10px;
+}
+.changecode{
+	display:inline-block;
+	width:25px;
+	height:25px;
+	background:url(../images/refresh.png) no-repeat;
+	cursor:pointer;
+	position:relative;
+	top:15px;
+}
+#error {
+	text-align: right;
+	margin-bottom: 10px;
+	color:#FF2626;
+	/* padding-left:20px;
+	background:url(../images/error.png) no-repeat left center; */
+}
+

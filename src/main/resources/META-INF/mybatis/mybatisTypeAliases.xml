@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd"> 
+<configuration>	
+  	<!--整合Spring的时候 只有 settings typeAliases属性-->
+ 	<settings>
+  		<setting name="cacheEnabled" value="false"/>
+	  	<setting name="defaultExecutorType" value="REUSE"/> <!-- 使用预处理执行器 -->
+	  	<setting name="defaultStatementTimeout" value="25"/>
+	  	<setting name="localCacheScope" value="SESSION"/>
+ 	</settings>
+ 	<typeAliases>
+ 		
+ 		<typeAlias type="com.jason.sms.domain.security.User" alias="User" />
+ 		<typeAlias type="com.jason.sms.domain.security.UserRunAs" alias="UserRunAs" />
+ 		
+		<typeAlias type="com.jason.sms.domain.security.Role" alias="Role" />
+		<typeAlias type="com.jason.sms.domain.security.Authority" alias="Authority" />
+		
+ 	</typeAliases>
+ 	
+ 	
+ 	<plugins>
+		<plugin interceptor="com.jason.framework.orm.mybatis.MybatisPagePlugin">
+			<property name="dialect" value="com.jason.framework.orm.dialect.impl.MySQLDialect" />
+		</plugin>
+	</plugins>
+	
+</configuration>

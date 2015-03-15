@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jason.sms.domain.security.Authority">
+
+<resultMap type="Authority" id="authorityResult">
+	<id property="id" column="id"/>
+	<result property="name" column="name"/>
+	<result property="permission" column="permission"/>
+</resultMap>
+
+<sql id="commonSelect">
+	select 
+		self.*
+	from security_authority self
+</sql>
+
+<insert id="save" keyProperty="id" useGeneratedKeys="true" >
+	insert into security_authority(name,permission) values(#{name},#{permission})
+</insert>
+<update id="update" >
+	update security_authority set name=#{name},permission=#{permission} where id=#{id}
+</update>
+
+<delete id="delete" >
+	delete from security_authority where id=#{id}
+</delete>
+
+<select id="get" resultMap="authorityResult">
+	<include refid="commonSelect"/>
+	where self.id=#{id}
+</select>
+
+<select id="query" resultMap="authorityResult">
+	<include refid="commonSelect"/>
+</select>
+
+<select id="queryPage" resultMap="authorityResult">
+	<include refid="commonSelect"/>
+	<where>
+		<if test="params.name != null and params.name !=''">
+			self.name like concat(concat('%',#{params.name}),'%')
+		</if>
+	</where>
+</select>
+</mapper>

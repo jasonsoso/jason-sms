@@ -1,0 +1,15 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Mon Nov 12 14:13:12 CST 2012
+http\://oss.sonatype.org/content/repositories/releases/.lastUpdated=1352700791746
+http\://oss.sonatype.org/content/repositories/snapshots/.lastUpdated=1352700791156
+http\://repo.maven.apache.org/maven2/.lastUpdated=1352700792227
+http\://oss.sonatype.org/content/repositories/releases/.error=
+default-http\://localhost\:8081/nexus/content/repositories/thirdparty/.lastUpdated=1352700789576
+http\://localhost\:8081/nexus/content/repositories/thirdparty/.error=Could not transfer artifact nf\:captcha\:pom\:1.2.1 from/to localhost (http\://localhost\:8081/nexus/content/repositories/thirdparty/)\: java.net.ConnectException\: Connection refused\: no further information to http\://localhost\:8081/nexus/content/repositories/thirdparty/nf/captcha/1.2.1/captcha-1.2.1.pom
+http\://oss.sonatype.org/content/repositories/snapshots/.error=
+file\://E\:\\java\\workspace-1\\mimo-do/lib/.lastUpdated=1352700788391
+file\://E\:\\java\\workspace-1\\mimo-do/lib/.error=
+http\://repo.maven.apache.org/maven2/.error=
+http\://maven.springframework.org/milestone/.lastUpdated=1346390331756
+http\://192.168.3.239\:8081/nexus/content/repositories/thirdparty/.lastUpdated=1346828686462
+http\://maven.springframework.org/milestone/.error=

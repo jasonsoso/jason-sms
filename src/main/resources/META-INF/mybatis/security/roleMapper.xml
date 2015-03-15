@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jason.sms.domain.security.Role">
+
+<resultMap type="Role" id="roleResult">
+	<id property="id" column="id"/>
+	<result property="name" column="name"/>
+	<result property="showName" column="show_name"/>
+	<collection property="authorities" ofType="Role" resultMap="authorityOnRole"/>
+</resultMap>
+
+<resultMap type="Authority" id="authorityOnRole">
+	<id property="id" column="authority_id"/>
+	<result property="name" column="authority_name"/>
+	<result property="permission" column="authority_permission"/>
+</resultMap>
+
+<resultMap type="Role" id="lazyRoleResult">
+	<id property="id" column="id"/>
+	<result property="name" column="name"/>
+	<result property="showName" column="show_name"/>
+</resultMap>
+
+<sql id="commonSelect">
+	select 
+		self.*,
+		authority.id as authority_id,
+		authority.name as authority_name,
+		authority.permission as authority_permission 
+	from security_role self 
+	left join security_role_authority roleAuthority on self.id=roleAuthority.role_id 
+	left join security_authority authority on authority.id=roleAuthority.authority_id 
+</sql>
+<sql id="lazySelect">
+	select 
+		self.*  
+	from security_role self 
+</sql>
+
+<insert id="save" keyProperty="id" useGeneratedKeys="true" >
+	insert into security_role(name,show_name) values(#{name},#{showName})				
+</insert>
+<insert id="saveAuthorities" >
+	insert into security_role_authority(role_id,authority_id) values 
+	<foreach item="auth" collection="authorities" open="" separator="," close="">
+		(#{id},#{auth.id})
+	</foreach>			
+</insert>
+
+<update id="update" >
+	update security_role set name=#{name},show_name=#{showName} where id=#{id}
+</update>
+
+<delete id="delete" >
+	delete from security_role where id=#{id}
+</delete>
+
+<delete id="deleteAuthorities" >
+	delete from security_role_authority where role_id=#{id}
+</delete>
+
+<select id="get" resultMap="roleResult">
+	<include refid="commonSelect"/>
+	where self.id=#{id}
+</select>
+
+<select id="query" resultMap="lazyRoleResult">
+	<include refid="lazySelect"/>
+</select>
+
+<select id="queryPage" resultMap="lazyRoleResult">
+	<include refid="lazySelect"/>
+	<where>
+		<if test="params.showName != null and params.showName !='' ">
+			self.show_name like concat(concat('%',#{params.showName}),'%')
+		</if>
+	</where>
+</select>
+</mapper>

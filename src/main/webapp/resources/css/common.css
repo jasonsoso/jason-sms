@@ -1,0 +1,177 @@
+@charset "utf-8";
+/*** CSS RESET ***/
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,em,button{margin:0;padding:0;}
+body{ font: 15px/1.4 "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", STHeiti, 'WenQuanYi Micro Hei', sans-serif;  color: #565656; background-color: #fff; }
+img, fieldset{border:none;vertical-align:middle;}
+input, textarea{font-size:12px;outline: none;}
+table{border-collapse:collapse;}
+a{text-decoration:none;color:#000;}
+a:hover{text-decoration:none;color:#f40;}
+a{outline:none; /*移除虚线框  IE8,FF有用*/ hide-focus: expression(this.hideFocus=true); /*IE6、IE7*/}
+*input{ hide-focus: expression(this.hideFocus=true); /*IE6、IE7*/}
+ul,ol{list-style:none;}
+input[type="button"],input[type="submit"]{-webkit-appearance:none;border:0px;}
+input[type="text"]{border-radius:0;}
+*html{background-image:url(about:blank);background-attachment:fixed;/*解决IE6窗口固定位置的元素实现无抖动效果*/}
+html{overflow-y:scroll;/*让页面一直出现滚动条*/}
+
+/*** COMMON CSS  ***/
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.cl{
+	clear:both;
+}
+.ipt{
+	border: 1px solid #ddd;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.17) inset;
+	transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	height: 34px;
+	padding: 0px 5px;
+	line-height:30px\9;
+}
+.ipt-size1{
+	width: 200px;
+}
+.slt{
+	border: 1px solid #ddd;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.17) inset;
+	transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	min-width: 120px;
+	height: 34px;
+	line-height: 34px;
+}
+.blt{
+	width: 200px;
+}
+.form-group {
+	margin-bottom: 10px;
+	overflow:hidden;
+	_zoom:1;
+}
+.btn{
+	display: inline-block;
+	padding: 4px 15px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: #f8ac59;
+	border-color: #f8ac59;
+	color: #FFFFFF;
+}
+.btn:hover{
+	color:#FFF;
+	background-color: #FF921B;
+}
+.page-title {
+	font-size: 24px;
+	display: block;
+	font-weight: normal !important;
+	padding: 13px 0px 8px 0px;
+}
+.page-title span {
+	font-size: 14px;
+}
+.title-line{
+	width: 100%;
+	height: 1px;
+	background: #dedede;
+	border-bottom: 1px solid #FFF;
+	margin-bottom: 20px;
+}
+.breadcrumb {
+	list-style: none;
+	background-color: #f5f5f5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.breadcrumb > li {
+	height: 33px;
+	line-height: 33px;
+	background: url("../images/bread-crumb-bg.jpg") repeat-x;
+	float: left;
+	margin-bottom: 25px;
+	padding: 0 0 0 8px;
+}
+.breadcrumb>li {
+	display: inline-block;
+	text-shadow: 0 1px 0 #fff;
+}
+.breadcrumb > li> a {
+	color: #737373;
+}
+.breadcrumb > li > .divider {
+	display: inline-block;
+	padding: 0px;
+	width: 33px;
+	height: 33px;
+	line-height: 33px;
+	background: url("../images/bread-crumb-divider.jpg") no-repeat;
+}
+.breadcrumb > li > .divider-last {
+	display: inline-block;
+	padding: 0px;
+	width: 19px;
+	height: 33px;
+	line-height: 33px;
+	background: url("../images/bread-crumb-last.jpg") no-repeat;
+	}
+.table-bordered {
+	border: 1px solid #ddd;
+	border-collapse: separate;
+	border-left: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.table-bordered .titletr th,.table-bordered .titletr td{
+	border-top: 0px;
+}
+.table-bordered th,.table-bordered td{
+	border-left: 1px solid #ddd;
+}
+.table-bordered .odd th,.table-bordered .odd td{
+	background-color: #f9f9f9;
+}
+.checker {
+	width: 19px;
+	height: 19px;
+	position: relative;
+	margin-right: 5px;
+}
+.checktd{
+	width: 24px;
+}
+.mar2{
+	margin-bottom: 20px;
+}
+.center{
+	text-align: center;
+}
+.error{
+	color: red;
+}
