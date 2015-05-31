@@ -21,7 +21,8 @@
     </appender>  
 	
 	<!-- Application Loggers -->
-	 <logger name="com.baidu.ueditor">
+	
+	<logger name="org.crazycake.shiro">
         <level value="debug" />
     </logger>
 	<logger name="com.jason.sms">

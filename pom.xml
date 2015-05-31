@@ -94,6 +94,12 @@
             <artifactId>shiro-spring</artifactId>
             <version>${org.apache.shiro-version}</version>
         </dependency>
+        <dependency>
+	        <groupId>org.crazycake</groupId>
+	        <artifactId>shiro-redis</artifactId>
+	        <version>2.4.2.1-RELEASE</version>
+	    </dependency>
+        
         
         <dependency>
             <groupId>commons-dbcp</groupId>

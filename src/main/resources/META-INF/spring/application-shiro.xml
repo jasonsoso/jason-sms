@@ -37,7 +37,38 @@
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager" >
     	<!-- Single realm app.  If you have multiple realms, use the 'realms' property instead. -->
     	<property name="realm" ref="myRealm"/>
+    	<!-- sessionManager 如用redis做缓存，则启动 -->
+	    <!-- <property name="sessionManager" ref="sessionManager" /> -->
+	    <!-- cacheManager 如用redis做缓存，则启动 -->
+	    <!-- <property name="cacheManager" ref="cacheManager" /> -->
 	</bean>
+	
+	
+	<!-- shiro redisManager -->
+	<bean id="redisManager" class="org.crazycake.shiro.RedisManager">
+	    <property name="host" value="127.0.0.1"/>
+	    <property name="port" value="6379"/>
+	    <property name="expire" value="1800"/>
+	    <!-- optional properties:
+	    <property name="timeout" value="10000"/>
+	    <property name="password" value="123456"/>
+	    -->
+	</bean>
+	<!-- redisSessionDAO -->
+	<bean id="redisSessionDAO" class="org.crazycake.shiro.RedisSessionDAO">
+	    <property name="redisManager" ref="redisManager" />
+	</bean>
+	<!-- sessionManager -->
+	<bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+	    <property name="sessionDAO" ref="redisSessionDAO" />
+	</bean>
+	<!-- cacheManager -->
+	<bean id="cacheManager" class="org.crazycake.shiro.RedisCacheManager">
+	    <property name="redisManager" ref="redisManager" />
+	</bean>
+	
+	
+	
 	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
 	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
 	
