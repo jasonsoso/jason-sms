@@ -40,10 +40,10 @@
     </category>  
     
     <logger name="org.mybatis.spring">
-        <level value="warn" />
+        <level value="debug" />
     </logger>
     <logger name="org.apache.ibatis">
-      <level value="warn" />
+      <level value="debug" />
     </logger>
 	
 	<!-- 3rdparty Loggers -->

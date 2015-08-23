@@ -17,6 +17,7 @@
 		<typeAlias type="com.jason.sms.domain.security.Role" alias="Role" />
 		<typeAlias type="com.jason.sms.domain.security.Authority" alias="Authority" />
 		
+		<typeAlias type="com.jason.sms.domain.security.UserLoginLog" alias="UserLoginLog" />
  	</typeAliases>
  	
  	

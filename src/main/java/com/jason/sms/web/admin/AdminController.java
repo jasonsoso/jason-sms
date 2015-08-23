@@ -28,8 +28,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jason.framework.util.EncryptUtils;
+import com.jason.framework.util.RequestUtil;
 import com.jason.framework.web.support.ControllerSupport;
 import com.jason.sms.domain.security.User;
+import com.jason.sms.service.security.UserLoginLogService;
 import com.jason.sms.service.security.UserService;
 import com.jason.sms.util.HttpCaptchaUtils;
 import com.jason.sms.util.exception.InvalidCaptchaException;
@@ -54,7 +56,8 @@ public class AdminController extends ControllerSupport {
 	
 	@Autowired
 	private UserService userService;
-	
+	@Autowired
+	private UserLoginLogService userLoginLogService;
 	
 	@RequestMapping(value = "/admin/login", method = GET)
 	public String login() {
@@ -81,6 +84,9 @@ public class AdminController extends ControllerSupport {
 			AuthenticationToken token = createToken(request);
 
 			subject.login(token);
+			//记录登录日志
+			userLoginLogService.save(request);
+			
 		} catch (Exception e) {
 			logger.error("login occur exception.", e);
 			return "redirect:/admin/login?code=" + translateException(e);
@@ -105,7 +111,7 @@ public class AdminController extends ControllerSupport {
 		if (null != rememberMeAsString) {
 			rememberMe = Boolean.valueOf(rememberMeAsString);
 		}
-		String host = request.getRemoteHost();
+		String host = RequestUtil.getUserIp(request);
 		
 		return new UsernamePasswordToken(username, passwordAsMd5, rememberMe, host);
 	}

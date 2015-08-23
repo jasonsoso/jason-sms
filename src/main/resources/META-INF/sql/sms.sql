@@ -99,6 +99,21 @@ CREATE TABLE `security_user_runas` (
 
 /*Data for the table `security_user_runas` */
 
+/*Table structure for table `security_user_login_log` */
+
+DROP TABLE IF EXISTS `security_user_login_log`;
+
+CREATE TABLE `security_user_login_log` (
+  `id` bigint(32) NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(32) NOT NULL,
+  `login_time` datetime DEFAULT NULL,
+  `ip` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Data for the table `security_user_login_log` */
+
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
