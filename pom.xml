@@ -22,7 +22,7 @@
         <package.environment>dev</package.environment>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
         <build.time>${maven.build.timestamp}</build.time>
-        <local.repository.path>file://${project.basedir}/lib/</local.repository.path>
+        <local.repository.path>file://${project.basedir}/lib</local.repository.path>
     </properties>
     
     <profiles>
@@ -164,6 +164,11 @@
 
     </dependencies>
     <repositories>
+        <!-- localhost repository -->
+        <repository>
+            <id>basedir</id>
+            <url>${local.repository.path}</url>
+        </repository>
        <repository>
             <id>thirdparty</id>
             <url>http://127.0.0.1:8081/nexus/content/repositories/thirdparty/</url>
