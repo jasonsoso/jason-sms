@@ -57,7 +57,6 @@ public class SecurityAuthorityController extends ControllerSupport {
 			error(redirectAttributes,"创建用户权限失败，请核对数据后重试");
 			return REDIRECT_LIST;
 		}
-
 		authorityService.save(entity);
 		success(redirectAttributes,"用户权限创建成功");
 		return REDIRECT_LIST;
@@ -83,7 +82,6 @@ public class SecurityAuthorityController extends ControllerSupport {
 		} catch (Exception e) {
 			error(redirectAttributes,"用户权限修改失败，请核对数据重试",e);
 		}
-
 		return REDIRECT_LIST;
 	}
 
@@ -98,7 +96,6 @@ public class SecurityAuthorityController extends ControllerSupport {
 		for (String item : EntityUtils.nullSafe(request.getParameterValues("items"), new String[] {})) {
 			delete(EntityUtils.toLong(item));
 		}
-
 		return REDIRECT_LIST;
 	}
 

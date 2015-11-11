@@ -5,7 +5,7 @@
 <title>用户权限管理_SMS</title>
 <%@include file="/common/taglibs.jsp" %>
 <%@include file="/common/common-header.jsp" %>
-<link rel="stylesheet" type="text/css" href="${ctx}/resources/css/style.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/resources/css/style.css"/>
 <script src="${ctx }/resources/js/admin.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
@@ -43,8 +43,6 @@
 						</div>
 					</div>
 				</div>
-				
-				
 				</form:form>
 				
 			</div>	
@@ -64,6 +62,5 @@
 				});
 			});
 		</script>
-
 </body>
 </html>

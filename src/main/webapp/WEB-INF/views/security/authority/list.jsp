@@ -5,10 +5,9 @@
 <title>用户权限管理_SMS</title>
 <%@include file="/common/taglibs.jsp" %>
 <%@include file="/common/common-header.jsp" %>
-<link rel="stylesheet" type="text/css" href="${ctx}/resources/css/style.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/resources/css/style.css" />
 <script src="${ctx }/resources/js/admin.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 </head>
 <body>
 		<!-- Header Start -->
@@ -45,7 +44,7 @@
 							<table class="table table-bordered">
 								<thead>
 									<tr class="titletr">
-										<th class="checktd"><div class="checker"><span><input type="checkbox"  id="selectAndUnselect" class="group-checkable checkboxes" value="1"></span></div></th>
+										<th class="checktd"><div class="checker"><span><input type="checkbox"  id="selectAndUnselect" class="group-checkable checkboxes" value="1"/></span></div></th>
 										<th>名称</th><th>权限</th><th>操作</th></tr>	
 								</thead>
 								<tbody>
@@ -68,7 +67,7 @@
 										  	</c:forEach>
 									  	</c:when>
 									  	<c:otherwise>
-									  	<tr><td colspan="4" align="center"><b>暂无内容</b></td></tr>
+											<tr><td colspan="4" align="center"><b>暂无内容</b></td></tr>
 									  	</c:otherwise>
 									  </c:choose>
 									  
@@ -86,7 +85,6 @@
 		<!-- Footer Start -->
 		<%@include file="/common/footer.jsp" %>
 		<!-- Footer End -->
-
 <script type="text/javascript">
 	$(function(){
 		//提示信息：
@@ -102,7 +100,6 @@
 				setTimeout(function () {
 				    d.close().remove();
 				}, 2000);
-				
 			}else{
 				var d = dialog({
 					title: '温馨提示：',
@@ -115,16 +112,13 @@
 				
 			}
 		}
-	
 		$("#del").click(function(){
 			var items = health.select();
-			
 			if(items && items.length <=0){
 				alert("请先选择要删除的内容");
 				return false;
 			}
 			if(confirm("你确定要删除这些内容吗?")){
-				
 				$('input[name="_method"]').remove();
 				$("#myForm").attr("action", "${ctx}/security/authority/delete/")
 							.attr("method","post")
@@ -132,14 +126,12 @@
 							.submit();
 				return false;
 			}
-			
 		});
 		$("#add").click(function(){
 			location.href = "${ctx}/security/authority/create/";
 		});
 	});
 </script>
-
 
 </body>
 </html>
