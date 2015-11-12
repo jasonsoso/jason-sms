@@ -26,6 +26,8 @@
 	            /admin/** = authc
 	            /security/runas/** = authc
 	            /security/** = authc,roles[admin]
+	            #/cms/template/** = authc,roles[admin]
+	            #/cms/channel/** = authc,roles[admin]
 	            
 	            /** = anon
         	</value>

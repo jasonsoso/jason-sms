@@ -66,7 +66,18 @@
         <!-- freemarker自定义标签 -->
         <property name="freemarkerVariables">
             <map>
+            	<entry key="cms_channel_list">
+            		<bean class="com.jason.sms.util.freemarker.ChannelDirective"></bean>
+            	</entry>
+            	<entry key="jason_user_icon">
+                    <bean class="com.jason.framework.web.directive.freemarker.UserIconDirective"></bean>
+                </entry>
+                <entry key="jason_properties">
+                    <bean class="com.jason.framework.web.directive.freemarker.PropertiesDirective"></bean>
+                </entry>
             </map>
+            
+            
         </property>
     </bean>
     

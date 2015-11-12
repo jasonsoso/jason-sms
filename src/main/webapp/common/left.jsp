@@ -13,6 +13,8 @@
                  <li><a class="" href="${ctx}/security/user/list/">用户管理</a></li>
                  <li><a class="" href="${ctx}/security/role/list/">角色管理</a></li>
                  <li><a class="" href="${ctx}/security/authority/list/">权限管理</a></li>
+                 <li><a class="" href="${ctx}/cms/channel/list/">频道管理</a></li>
+                 <li><a class="" href="${ctx}/cms/template/list/">模板管理</a></li>
              </ul>
              <b class="down"></b>
              </shiro:hasRole>

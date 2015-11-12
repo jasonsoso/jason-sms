@@ -18,6 +18,9 @@
 		<typeAlias type="com.jason.sms.domain.security.Authority" alias="Authority" />
 		
 		<typeAlias type="com.jason.sms.domain.security.UserLoginLog" alias="UserLoginLog" />
+		
+		<typeAlias type="com.jason.sms.domain.cms.Channel" alias="Channel" />
+		<typeAlias type="com.jason.sms.domain.cms.Template" alias="Template" />
  	</typeAliases>
  	
  	

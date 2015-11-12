@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jason.sms.domain.cms.Channel">
+
+<resultMap type="Channel" id="channelResult">
+	<id property="id" column="id"/>
+	<result property="name" column="name"/>
+	<result property="path" column="path"/>
+	<result property="sort" column="sort"/>
+	<association property="father" column="father_id" javaType="Channel" resultMap="fatherChannelResult" />
+	<collection property="template" ofType="Channel" javaType="Template" resultMap="templateResult"/>
+	<collection property="children" ofType="Channel" resultMap="childrenChannelResult"/>
+</resultMap>
+<resultMap type="Template" id="templateResult">
+	<id property="id" column="template_id"/>
+	<result property="name" column="template_name"/>
+	<result property="fileName" column="template_file_name"/>
+	<result property="content" column="template_content"/>
+	<result property="physicalUrl" column="template_physical_url"/>
+	<result property="sort" column="template_sort"/>
+	<result property="updateTime" column="template_update_time"/>
+</resultMap>
+<resultMap type="Channel" id="fatherChannelResult">
+	<id property="id" column="father_id"/>
+	<result property="name" column="father_name"/>
+	<result property="path" column="father_path"/>
+	<result property="sort" column="father_sort"/>
+</resultMap>
+<resultMap type="Channel" id="childrenChannelResult">
+	<id property="id" column="child_id"/>
+	<result property="name" column="child_name"/>
+	<result property="path" column="child_path"/>
+	<result property="sort" column="child_sort"/>
+</resultMap>
+
+<sql id="commonSelect">
+	select   
+		self.*,
+		father.id as father_id,
+		father.name as father_name,
+		father.path as father_path,
+		father.sort as father_sort,
+		children.id as child_id,
+		children.name as child_name,
+		children.path as child_path,
+		children.sort as child_sort,
+		template.id as template_id,
+		template.name as template_name,
+		template.file_name as template_file_name,
+		template.content as template_content,
+		template.physical_url as template_physical_url,
+		template.sort as template_sort,
+		template.update_time as template_update_time
+	from cms_channel self
+	left join cms_channel father on self.father_id=father.id 
+	left join cms_channel children on self.id=children.father_id
+	left join cms_template template on self.template_id=template.id	
+	
+</sql>
+
+<insert id="save" keyProperty="id" useGeneratedKeys="true" >
+	insert into cms_channel(name,path,sort,father_id,template_id)
+				values(#{name},#{path},#{sort},#{father.id},#{template.id})
+</insert>
+<update id="update" >
+	update cms_channel
+			set name=#{name},path=#{path},sort=#{sort},
+					father_id=#{father.id},template_id=#{template.id}
+			where id=#{id}
+	
+</update>
+<delete id="delete" >
+	delete from cms_channel where id=#{id}
+</delete>
+<delete id="deleteById" >
+	delete from cms_channel where id=#{id}
+</delete>
+<select id="queryUniqueByPath" parameterType="string" resultMap="channelResult">
+	 <include refid="commonSelect"/>
+	where self.path=#{path}
+</select>
+<select id="get" resultMap="channelResult">
+	<include refid="commonSelect"/>
+	where self.id=#{id}
+</select>
+<select id="query" resultMap="channelResult">
+	<include refid="commonSelect"/>
+	order by self.sort asc
+</select>
+<select id="queryPage" resultMap="channelResult">
+	<include refid="commonSelect"/> 
+	<!-- order by self.sort asc -->
+</select>
+
+<select id="queryTop" resultMap="channelResult">
+	select   
+		self.*,
+		children.id as child_id,
+		children.name as child_name,
+		children.path as child_path,
+		children.sort as child_sort
+	from cms_channel self 
+	left join cms_channel children on self.id=children.father_id 
+	where self.father_id is null 
+	order by self.sort asc
+</select>
+<select id="queryChildById" resultMap="channelResult">
+	<include refid="commonSelect"/> 
+	where self.father_id=#{id}
+</select>
+<select id="queryChannels" resultMap="channelResult">
+	<include refid="commonSelect"/> 
+</select>
+
+
+</mapper>
