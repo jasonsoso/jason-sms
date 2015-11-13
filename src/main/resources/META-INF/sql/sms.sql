@@ -10,10 +10,58 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-11-12 16:15:59
+Date: 2015-11-13 18:21:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `cms_article`
+-- ----------------------------
+DROP TABLE IF EXISTS `cms_article`;
+CREATE TABLE `cms_article` (
+  `id` bigint(32) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT '标题',
+  `author` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '作者',
+  `cover` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '封面',
+  `summary` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '摘要',
+  `content` text COLLATE utf8_unicode_ci NOT NULL COMMENT '内容',
+  `status` int(10) NOT NULL DEFAULT '0' COMMENT '状态',
+  `category_id` bigint(32) NOT NULL COMMENT '分类',
+  `create_id` bigint(32) NOT NULL COMMENT '创建人',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_id` bigint(32) NOT NULL COMMENT '最后更新人',
+  `update_time` datetime NOT NULL COMMENT '最后更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of cms_article
+-- ----------------------------
+INSERT INTO `cms_article` VALUES ('2', '标题11', 'Jason11', '封面11', '摘要11', '内容111', '0', '3', '1', '2015-11-13 12:00:17', '1', '2015-11-13 16:36:07');
+INSERT INTO `cms_article` VALUES ('3', 'test2', 'test2', 'test2', null, 'test2', '0', '2', '1', '2015-11-13 16:36:20', '1', '2015-11-13 16:36:20');
+
+-- ----------------------------
+-- Table structure for `cms_category`
+-- ----------------------------
+DROP TABLE IF EXISTS `cms_category`;
+CREATE TABLE `cms_category` (
+  `id` bigint(32) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT '分类名称',
+  `create_id` bigint(32) NOT NULL COMMENT '创建人',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_id` bigint(32) NOT NULL COMMENT '最后更新人',
+  `update_time` datetime NOT NULL COMMENT '最后更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='文章分类';
+
+-- ----------------------------
+-- Records of cms_category
+-- ----------------------------
+INSERT INTO `cms_category` VALUES ('1', '要闻', '1', '2015-11-13 16:02:03', '1', '2015-11-13 16:03:26');
+INSERT INTO `cms_category` VALUES ('2', '娱乐', '1', '2015-11-13 16:02:16', '1', '2015-11-13 16:02:16');
+INSERT INTO `cms_category` VALUES ('3', '房产', '1', '2015-11-13 16:03:06', '1', '2015-11-13 16:03:06');
+INSERT INTO `cms_category` VALUES ('4', '体育', '1', '2015-11-13 16:03:16', '1', '2015-11-13 16:03:16');
 
 -- ----------------------------
 -- Table structure for `cms_channel`
@@ -159,7 +207,7 @@ CREATE TABLE `security_user_login_log` (
   `login_time` datetime DEFAULT NULL,
   `ip` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of security_user_login_log
@@ -177,6 +225,20 @@ INSERT INTO `security_user_login_log` VALUES ('10', '1', '2015-11-12 14:54:40', 
 INSERT INTO `security_user_login_log` VALUES ('11', '1', '2015-11-12 15:11:32', '192.168.0.191');
 INSERT INTO `security_user_login_log` VALUES ('12', '1', '2015-11-12 15:31:57', '192.168.0.191');
 INSERT INTO `security_user_login_log` VALUES ('13', '1', '2015-11-12 16:11:29', '192.168.0.191');
+INSERT INTO `security_user_login_log` VALUES ('14', '1', '2015-11-12 16:23:53', '192.168.0.191');
+INSERT INTO `security_user_login_log` VALUES ('15', '1', '2015-11-13 11:05:07', '127.0.0.1');
+INSERT INTO `security_user_login_log` VALUES ('16', '1', '2015-11-13 11:38:16', '127.0.0.1');
+INSERT INTO `security_user_login_log` VALUES ('17', '1', '2015-11-13 11:53:06', '127.0.0.1');
+INSERT INTO `security_user_login_log` VALUES ('18', '1', '2015-11-13 15:41:36', '127.0.0.1');
+INSERT INTO `security_user_login_log` VALUES ('19', '1', '2015-11-13 15:58:56', '127.0.0.1');
+INSERT INTO `security_user_login_log` VALUES ('20', '1', '2015-11-13 16:01:50', '127.0.0.1');
+INSERT INTO `security_user_login_log` VALUES ('21', '1', '2015-11-13 16:13:16', '127.0.0.1');
+INSERT INTO `security_user_login_log` VALUES ('22', '1', '2015-11-13 16:20:06', '127.0.0.1');
+INSERT INTO `security_user_login_log` VALUES ('23', '1', '2015-11-13 16:24:21', '127.0.0.1');
+INSERT INTO `security_user_login_log` VALUES ('24', '1', '2015-11-13 16:32:06', '127.0.0.1');
+INSERT INTO `security_user_login_log` VALUES ('25', '1', '2015-11-13 16:34:40', '127.0.0.1');
+INSERT INTO `security_user_login_log` VALUES ('26', '1', '2015-11-13 16:42:38', '127.0.0.1');
+INSERT INTO `security_user_login_log` VALUES ('27', '1', '2015-11-13 17:52:34', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for `security_user_runas`
