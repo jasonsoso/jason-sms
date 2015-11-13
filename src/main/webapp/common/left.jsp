@@ -15,6 +15,10 @@
                  <li><a class="" href="${ctx}/security/authority/list/">权限管理</a></li>
                  <li><a class="" href="${ctx}/cms/channel/list/">频道管理</a></li>
                  <li><a class="" href="${ctx}/cms/template/list/">模板管理</a></li>
+                 
+                 
+                 <li><a class="" href="${ctx}/cms/category/list/">分类管理</a></li>
+                 <li><a class="" href="${ctx}/cms/article/list/">文章管理</a></li>
              </ul>
              <b class="down"></b>
              </shiro:hasRole>

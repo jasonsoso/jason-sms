@@ -82,7 +82,7 @@
 	<c:forEach items="${template }" var="templates" varStatus="status">
 		<c:choose>
 			<c:when test="${templates.id eq channel.template.id }">
-				<option s value="${templates.id}" selected="selected"> ${templates.name }</option>
+				<option value="${templates.id}" selected="selected"> ${templates.name }</option>
 			</c:when>
 			<c:otherwise>
 				<option value="${templates.id}"> ${templates.name }</option>

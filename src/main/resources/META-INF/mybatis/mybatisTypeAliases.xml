@@ -21,6 +21,9 @@
 		
 		<typeAlias type="com.jason.sms.domain.cms.Channel" alias="Channel" />
 		<typeAlias type="com.jason.sms.domain.cms.Template" alias="Template" />
+		<typeAlias type="com.jason.sms.domain.cms.Article" alias="Article" />
+		<typeAlias type="com.jason.sms.domain.cms.Category" alias="Category" />
+		
  	</typeAliases>
  	
  	
