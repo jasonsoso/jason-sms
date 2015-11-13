@@ -37,8 +37,9 @@ mySettings = {
 		{name:'Preview', className:'preview', call:'preview' },
 		{separator:'---------------' },
 		{name:'标签', key:'BQ',dropMenu :[
-                                      {name:'cms_channel_list', openWith:'<@cms_channel_list path=\'man\';channels>', closeWith:'</@cms_channel_list>' },
-                                      {name:'标签2', openWith:'[size=100]', closeWith:'[/size]' }
+                                      {name:'栏目列表', openWith:'<@cms_channel_list path=\'man\';channels>', closeWith:'</@cms_channel_list>' },
+                                      {name:'配置参数', openWith:'<@jason_properties key=\'photoServer.domain\' default=\'***\'/>', closeWith:'' },
+                                      {name:'用户头像', openWith:'<@jason_user_icon path=\'${user.photo}\' type=\'130_130\'/>', closeWith:'' }
                                   ]},
                                   
 	]

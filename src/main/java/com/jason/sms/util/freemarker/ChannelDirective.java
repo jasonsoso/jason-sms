@@ -20,7 +20,17 @@ import freemarker.template.TemplateScalarModel;
 /**
  * 读取栏目信息
  * 必填值path
- * eg:<@jason_properties key="photoServer.domain" default="***"/>
+ * eg:
+ * 	 <@cms_channel_list path='man';channels>
+	 	 <#list channels as channels>
+		 	 <a href="${ctx}${channels.path}">${channels.name}</a>
+		 	 <#if channels.children?size gt 0>
+		 	 	 [<#list channels.children as channel>
+		 	 	 <a href="${ctx}${channel.path}">${channel.name}</a>
+		 	 	 </#list>]
+		 	 </#if>
+		 </#list>
+	</@cms_channel_list>
  * 
  * @author Jason
  * @date 2015-11-12
